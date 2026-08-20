@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "fixture_version": "public_beta_v0.2",
+  "data_classification": "fully_synthetic",
+  "description": "Frozen product behavior for the Public Beta core. Every case states its fixture input and expected result before further module development.",
+  "cases": [
+    {
+      "id": "three_sources_same_creator",
+      "input": {
+        "source_record_ids": ["WAVE-001", "NOX-001", "MAN-001"]
+      },
+      "expected": {
+        "canonical_creator_count": 1,
+        "merged_source_record_ids": ["MAN-001", "NOX-001", "WAVE-001"]
+      }
+    },
+    {
+      "id": "shared_agency_email",
+      "input": {
+        "source_record_ids": ["WAVE-022", "NOX-022", "MAN-021"],
+        "shared_email": "talent@northstar-agency.example.com"
+      },
+      "expected": {
+        "canonical_creator_count": 3,
+        "must_not_auto_merge": true
+      }
+    },
+    {
+      "id": "same_handle_conflicting_platform_ids",
+      "input": {
+        "source_record_ids": ["WAVE-021", "NOX-021"],
+        "normalized_handle": "smartpet_daily"
+      },
+      "expected": {
+        "canonical_creator_count": 2,
+        "review_required": true
+      }
+    },
+    {
+      "id": "followers_spread_above_twenty_percent",
+      "input": {
+        "source_record_ids": ["WAVE-002", "NOX-002", "MAN-002"],
+        "field": "followers"
+      },
+      "expected": {
+        "conflict_level": "High"
+      }
+    },
+    {
+      "id": "observed_time_missing",
+      "input": {
+        "source_record_ids": ["NOX-010"],
+        "field": "followers"
+      },
+      "expected": {
+        "status": "Observed Time Unknown",
+        "must_not_have_status": "Fresh"
+      }
+    },
+    {
+      "id": "invalid_followers",
+      "input": {
+        "source_record_ids": ["WAVE-030"],
+        "field": "followers",
+        "raw_value": "many"
+      },
+      "expected": {
+        "parsed_value": null,
+        "status": "Invalid",
+        "must_not_equal": 0
+      }
+    },
+    {
+      "id": "missing_email_otherwise_good",
+      "input": {
+        "source_record_ids": ["WAVE-004", "NOX-004", "MAN-004"],
+        "campaign": {
+          "markets": ["US"],
+          "languages": ["en"],
+          "follower_min": 10000,
+          "follower_max": 500000,
+          "latest_post_max_age_days": 30,
+          "require_contact_path": false
+        }
+      },
+      "expected": {
+        "action_level_one_of": ["Verify", "Hold"],
+        "selected_email": null
+      }
+    },
+    {
+      "id": "market_mismatch",
+      "input": {
+        "source_record_ids": ["WAVE-026"],
+        "campaign": {
+          "markets": ["US"],
+          "languages": ["en"],
+          "follower_min": 10000,
+          "follower_max": 500000,
+          "latest_post_max_age_days": 30,
+          "require_contact_path": false
+        }
+      },
+      "expected": {
+        "action_level": "Excluded",
+        "exclusion_reason": "EXCLUDED_MARKET"
+      }
+    },
+    {
+      "id": "same_input_is_deterministic",
+      "input": {
+        "files": [
+          "waveinflu_creators.xlsx",
+          "nox_creators.csv",
+          "manual_creators.xlsx"
+        ],
+        "campaign": "campaign.txt",
+        "reference_time": "2026-07-29T00:00:00Z"
+      },
+      "expected": {
+        "identical_order_and_fields": [
+          "source_record_ids",
+          "action_level",
+          "reference_score",
+          "conflicts"
+        ]
+      }
+    },
+    {
+      "id": "model_disabled_core_outputs",
+      "input": {
+        "files": ["waveinflu_creators.xlsx", "nox_creators.csv"],
+        "campaign": "campaign.txt",
+        "model_enabled": false
+      },
+      "expected": {
+        "required_outputs": ["data_audit.xlsx", "creator_shortlist.xlsx"]
+      }
+    }
+  ]
+}

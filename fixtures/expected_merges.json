@@ -1,0 +1,457 @@
+{
+  "schema_version": 1,
+  "fixture_version": "public_beta_v0.2",
+  "data_classification": "fully_synthetic",
+  "description": "Expected identity-resolution outcomes for 120 synthetic source records.",
+  "expected_counts": {
+    "raw_records": 120,
+    "waveinflu_records": 40,
+    "nox_records": 40,
+    "manual_records": 40,
+    "auto_merge_groups": 25,
+    "records_in_auto_merge_groups": 60,
+    "canonical_creators_after_auto_merges": 85
+  },
+  "auto_merge_groups": [
+    {
+      "group_id": "merge_t001",
+      "expected_creator_key": "T001",
+      "records": [
+        "WAVE-001",
+        "NOX-001",
+        "MAN-001"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t002",
+      "expected_creator_key": "T002",
+      "records": [
+        "WAVE-002",
+        "NOX-002",
+        "MAN-002"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t003",
+      "expected_creator_key": "T003",
+      "records": [
+        "WAVE-003",
+        "NOX-003",
+        "MAN-003"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t004",
+      "expected_creator_key": "T004",
+      "records": [
+        "WAVE-004",
+        "NOX-004",
+        "MAN-004"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t005",
+      "expected_creator_key": "T005",
+      "records": [
+        "WAVE-005",
+        "NOX-005",
+        "MAN-005"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t006",
+      "expected_creator_key": "T006",
+      "records": [
+        "WAVE-006",
+        "NOX-006",
+        "MAN-006"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t007",
+      "expected_creator_key": "T007",
+      "records": [
+        "WAVE-007",
+        "NOX-007",
+        "MAN-007"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t008",
+      "expected_creator_key": "T008",
+      "records": [
+        "WAVE-008",
+        "NOX-008",
+        "MAN-008"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t009",
+      "expected_creator_key": "T009",
+      "records": [
+        "WAVE-009",
+        "NOX-009",
+        "MAN-009"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_t010",
+      "expected_creator_key": "T010",
+      "records": [
+        "WAVE-010",
+        "NOX-010",
+        "MAN-010"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wn001",
+      "expected_creator_key": "WN001",
+      "records": [
+        "WAVE-011",
+        "NOX-011"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wn002",
+      "expected_creator_key": "WN002",
+      "records": [
+        "WAVE-012",
+        "NOX-012"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wn003",
+      "expected_creator_key": "WN003",
+      "records": [
+        "WAVE-013",
+        "NOX-013"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wn004",
+      "expected_creator_key": "WN004",
+      "records": [
+        "WAVE-014",
+        "NOX-014"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wn005",
+      "expected_creator_key": "WN005",
+      "records": [
+        "WAVE-015",
+        "NOX-015"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wm001",
+      "expected_creator_key": "WM001",
+      "records": [
+        "WAVE-016",
+        "MAN-011"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wm002",
+      "expected_creator_key": "WM002",
+      "records": [
+        "WAVE-017",
+        "MAN-012"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wm003",
+      "expected_creator_key": "WM003",
+      "records": [
+        "WAVE-018",
+        "MAN-013"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wm004",
+      "expected_creator_key": "WM004",
+      "records": [
+        "WAVE-019",
+        "MAN-014"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_wm005",
+      "expected_creator_key": "WM005",
+      "records": [
+        "WAVE-020",
+        "MAN-015"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_nm001",
+      "expected_creator_key": "NM001",
+      "records": [
+        "NOX-016",
+        "MAN-016"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_nm002",
+      "expected_creator_key": "NM002",
+      "records": [
+        "NOX-017",
+        "MAN-017"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_nm003",
+      "expected_creator_key": "NM003",
+      "records": [
+        "NOX-018",
+        "MAN-018"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_nm004",
+      "expected_creator_key": "NM004",
+      "records": [
+        "NOX-019",
+        "MAN-019"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    },
+    {
+      "group_id": "merge_nm005",
+      "expected_creator_key": "NM005",
+      "records": [
+        "NOX-020",
+        "MAN-020"
+      ],
+      "expected_action": "auto_merge",
+      "deterministic_evidence": [
+        "same normalized platform",
+        "same platform_creator_id",
+        "same normalized profile URL after tracking parameters are removed",
+        "same normalized handle"
+      ]
+    }
+  ],
+  "review_required": [
+    {
+      "case_id": "same_handle_conflicting_platform_ids",
+      "records": [
+        "WAVE-021",
+        "NOX-021"
+      ],
+      "shared_normalized_handle": "smartpet_daily",
+      "conflicts": [
+        "platform_creator_id differs",
+        "profile_url differs"
+      ],
+      "expected_action": "review_required_keep_separate"
+    },
+    {
+      "case_id": "same_handle_cross_platform",
+      "records": [
+        "WAVE-023",
+        "MAN-022"
+      ],
+      "shared_normalized_handle": "paw_gadget_lab",
+      "conflicts": [
+        "platform differs"
+      ],
+      "expected_action": "review_required_keep_separate"
+    }
+  ],
+  "must_not_merge": [
+    {
+      "case_id": "shared_agency_email",
+      "records": [
+        "WAVE-022",
+        "NOX-022",
+        "MAN-021"
+      ],
+      "shared_email": "talent@northstar-agency.example.com",
+      "reason": "An agency mailbox can represent multiple creators and is not an identity key."
+    },
+    {
+      "case_id": "same_handle_conflicting_platform_ids",
+      "records": [
+        "WAVE-021",
+        "NOX-021"
+      ],
+      "reason": "A matching handle cannot override conflicting platform IDs and profile URLs."
+    },
+    {
+      "case_id": "cross_platform_handle_only",
+      "records": [
+        "WAVE-023",
+        "MAN-022"
+      ],
+      "reason": "Cross-platform handle equality is a weak signal and cannot auto-merge."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "fixture_version": "structure_faithful_v1",
+  "data_classification": "fully_synthetic",
+  "industry_scenario": "Pet smart hardware brand expanding internationally",
+  "record_count": 120,
+  "canonical_creator_count": 85,
+  "files": [
+    {
+      "path": "waveinflu_creators.xlsx",
+      "format": "xlsx",
+      "rows": 40,
+      "schema_basis": "Repository-authored WaveInflu-like column pattern; not an actual export.",
+      "notable_null_rates": {
+        "Business Email": 0.25,
+        "Last Sponsored Post": 0.275,
+        "Metrics Updated At": 0.025
+      }
+    },
+    {
+      "path": "nox_creators.csv",
+      "format": "csv_utf8",
+      "rows": 40,
+      "schema_basis": "Repository-authored Nox-like column pattern; not an actual export.",
+      "notable_null_rates": {
+        "Email": 0.225,
+        "Latest Brand Post": 0.25,
+        "Observed At": 0.05
+      }
+    },
+    {
+      "path": "manual_creators.xlsx",
+      "format": "xlsx",
+      "rows": 40,
+      "schema_basis": "Canonical manual-list pattern created for Generic Mapping tests.",
+      "notable_null_rates": {
+        "email": 0.15,
+        "latest_sponsored_post_at": 0.275,
+        "observed_at": 0.025
+      }
+    }
+  ],
+  "preserved_patterns": [
+    "Mixed CSV/XLSX inputs",
+    "Text, integer, decimal, boolean, date, and timezone-bearing datetime values",
+    "Optional fields and source-specific unmapped columns",
+    "Handle case and prefix variations",
+    "Profile URL tracking parameters",
+    "Missing observation timestamps",
+    "Compact numbers and invalid values",
+    "Duplicate, conflict, stale, and hard-filter scenarios"
+  ],
+  "replaced_identifiers": [
+    "handle",
+    "profile_url",
+    "email",
+    "platform_creator_id",
+    "display_name",
+    "brand",
+    "internal_notes"
+  ],
+  "limitations": [
+    "The suite does not prove compatibility with any real third-party export.",
+    "Column names are synthetic patterns and may differ from current vendor exports.",
+    "Null rates model test coverage, not population statistics."
+  ]
+}

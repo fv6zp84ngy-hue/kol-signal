@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "parser_version": "1",
+  "cases": [
+    {
+      "id": "zh_aliases",
+      "brief": "supported_zh.txt",
+      "expected": {
+        "markets": ["US"],
+        "languages": ["en"],
+        "platforms": ["tiktok", "instagram", "youtube"],
+        "follower_min": 10000,
+        "follower_max": 500000,
+        "latest_post_max_age_days": 30,
+        "require_contact_path": true
+      }
+    },
+    {
+      "id": "en_aliases",
+      "brief": "supported_en.txt",
+      "same_campaign_as": "zh_aliases"
+    },
+    {
+      "id": "comma_numbers",
+      "brief": "supported_commas.txt",
+      "same_campaign_as": "zh_aliases"
+    },
+    {
+      "id": "unrecognized_hard_conditions",
+      "brief": "unrecognized_hard_conditions.txt",
+      "expected_unrecognized": [
+        "内容不要太商业化",
+        "最好有小红书感"
+      ],
+      "expected_blocking_count": 1,
+      "blocks_non_interactive_run": true
+    },
+    {
+      "id": "conflicting_ranges",
+      "brief": "conflicting_ranges.txt",
+      "expected_conflict_field": "follower_range"
+    },
+    {
+      "id": "unsupported_market",
+      "brief": "unsupported_market.txt",
+      "expected_blocking_text": "目标市场为法国"
+    },
+    {
+      "id": "blocklist_topics",
+      "brief": "blocklist_topics.txt",
+      "expected": {
+        "blocklist": ["fixture_t001_pet", "fixture_t002_pet"],
+        "topics": [
+          "pet_lifestyle",
+          "dog_tutorial",
+          "pet_tech",
+          "smart_hardware",
+          "product_review"
+        ]
+      }
+    }
+  ]
+}

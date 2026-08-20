@@ -1,0 +1,5 @@
+Nox ID,Channel,Channel ID,Handle,URL,Name,Total Followers,Average Views,Engagement Rate,Location,Content Language,Email,Contact Type,Latest Upload,Latest Brand Post,Observed At,Email Observed At,Data Estimated
++CMD,Tik Tok,id-shared,=HYPERLINK(1),,Synthetic Formula Creator,128K,50000,3.5%,US,EN,formula@example.com,creator,2026-07-29,,2026-07-29T00:00:00Z,2026-07-29T00:00:00Z,false
+@SUM(A1:A2),Tik Tok,id-shared,=HYPERLINK(1),,Synthetic Formula Creator,129K,51000,3.6%,US,EN,formula@example.com,creator,2026-07-29,,2026-07-29T00:00:00Z,2026-07-29T00:00:00Z,false
+-1+1,Tik Tok,id-conflict,=HYPERLINK(1),,Synthetic Formula Collision,130K,52000,3.7%,US,EN,formula@example.com,creator,2026-07-29,,2026-07-29T00:00:00Z,2026-07-29T00:00:00Z,false
+SAFE-004,Tik Tok,id-safe,@SUM(A1:A2),,Synthetic At Creator,131K,53000,3.8%,US,EN,atsum@example.com,creator,2026-07-29,,2026-07-29T00:00:00Z,2026-07-29T00:00:00Z,false

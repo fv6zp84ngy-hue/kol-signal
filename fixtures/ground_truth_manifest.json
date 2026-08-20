@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "fixture_version": "structure_faithful_v1",
+  "data_classification": "fully_synthetic",
+  "record_count": 120,
+  "truth_files": [
+    "golden_tests.json",
+    "expected_merges.json",
+    "expected_conflicts.json"
+  ],
+  "cases": [
+    {
+      "id": "three_sources_same_creator",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-001", "NOX-001", "MAN-001"]
+    },
+    {
+      "id": "shared_agency_email",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-022", "NOX-022", "MAN-021"]
+    },
+    {
+      "id": "same_handle_conflicting_platform_ids",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-021", "NOX-021"]
+    },
+    {
+      "id": "followers_spread_above_twenty_percent",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-002", "NOX-002", "MAN-002"]
+    },
+    {
+      "id": "observed_time_missing",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["NOX-010"]
+    },
+    {
+      "id": "invalid_followers",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-030"]
+    },
+    {
+      "id": "missing_email_otherwise_good",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-004", "NOX-004", "MAN-004"]
+    },
+    {
+      "id": "market_mismatch",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": ["WAVE-026"]
+    },
+    {
+      "id": "deterministic_repeat_run",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": []
+    },
+    {
+      "id": "model_independent_core",
+      "truth_file": "golden_tests.json",
+      "source_record_ids": []
+    }
+  ]
+}

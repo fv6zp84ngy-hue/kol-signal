@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-07-31",
+  "status_definitions": {
+    "Verified": "At least two lawful real or de-identified export structures, plus schema-drift and end-to-end tests.",
+    "Experimental": "One lawful actual export, official sample, or exact official field structure; mapping confirmation may still be required.",
+    "Generic Import": "No dedicated adapter; imported through visible field mapping.",
+    "Not Tested": "No actual export or exact official schema evidence."
+  },
+  "sources": [
+    {
+      "evidence_id": "fixture_suite_v1",
+      "source_name": "Creator Signal Intelligence synthetic fixture suite",
+      "source_type": "fully_synthetic_fixture",
+      "acquisition_method": "Deterministic local generation from product test scenarios; not copied from a third-party export.",
+      "license": "MIT repository fixture",
+      "contains_pii": false,
+      "redistributable": true,
+      "verified_at": "2026-07-31",
+      "adapter_status": "Not Tested",
+      "intended_use": "Normalization, identity, conflict, scoring, output, and schema-variation regression tests."
+    },
+    {
+      "evidence_id": "waveinflu_public_product_metadata_2026_07_31",
+      "source_name": "WaveInflu public Chrome Web Store product metadata",
+      "source_type": "official_public_product_metadata",
+      "acquisition_method": "Public product listing reviewed by URL; confirms Excel export categories but not exact headers or workbook schema.",
+      "license": "Third-party page; URL reference only, content not redistributed",
+      "contains_pii": false,
+      "redistributable": false,
+      "verified_at": "2026-07-31",
+      "adapter_status": "Not Tested",
+      "intended_use": "Capability context only; must not be used to claim Native Adapter schema compatibility.",
+      "source_url": "https://chromewebstore.google.com/detail/waveinflu-influencer-find/memenfegdnhmjipjnfndoncinlcpfenf"
+    },
+    {
+      "evidence_id": "nox_public_product_metadata_2026_07_31",
+      "source_name": "NoxInfluencer public Help Center product metadata",
+      "source_type": "official_public_product_metadata",
+      "acquisition_method": "Public official help page reviewed by URL; confirms data categories but not exact CSV headers or export schema.",
+      "license": "Third-party page; URL reference only, content not redistributed",
+      "contains_pii": false,
+      "redistributable": false,
+      "verified_at": "2026-07-31",
+      "adapter_status": "Not Tested",
+      "intended_use": "Capability context only; must not be used to claim Native Adapter schema compatibility.",
+      "source_url": "https://www.noxinfluencer.com/help/knowledgebase/influencer-data-service/"
+    },
+    {
+      "evidence_id": "generic_mapping_contract_v1",
+      "source_name": "Generic CSV/XLSX mapping contract",
+      "source_type": "product_test_contract",
+      "acquisition_method": "Repository-authored canonical field and mapping tests.",
+      "license": "MIT repository test contract",
+      "contains_pii": false,
+      "redistributable": true,
+      "verified_at": "2026-07-31",
+      "adapter_status": "Generic Import",
+      "intended_use": "Unknown lawful CSV/XLSX imports with mapping preview and explicit confirmation."
+    }
+  ]
+}

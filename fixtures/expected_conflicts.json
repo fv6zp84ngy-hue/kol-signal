@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "fixture_version": "public_beta_v0.2",
+  "reference_time": "2026-07-29T00:00:00Z",
+  "beta_default_ttl_days": {
+    "latest_post_at": 7,
+    "followers": 30,
+    "average_views": 30,
+    "email": 90,
+    "latest_sponsored_post_at": 45
+  },
+  "field_conflicts": [
+    {
+      "conflict_id": "followers_t002_high",
+      "creator_key": "T002",
+      "records": [
+        "WAVE-002",
+        "NOX-002",
+        "MAN-002"
+      ],
+      "field": "followers",
+      "raw_values": {
+        "WAVE-002": "128K",
+        "NOX-002": "82,000",
+        "MAN-002": 126000
+      },
+      "expected_level": "high",
+      "reason": "Relative spread is greater than 20%."
+    },
+    {
+      "conflict_id": "followers_t006_high",
+      "creator_key": "T006",
+      "records": [
+        "WAVE-006",
+        "NOX-006",
+        "MAN-006"
+      ],
+      "field": "followers",
+      "raw_values": {
+        "WAVE-006": 45000,
+        "NOX-006": 61000,
+        "MAN-006": 47000
+      },
+      "expected_level": "high",
+      "reason": "45,000 versus 61,000 exceeds the 20% threshold."
+    },
+    {
+      "conflict_id": "email_t003_review",
+      "creator_key": "T003",
+      "records": [
+        "WAVE-003",
+        "NOX-003",
+        "MAN-003"
+      ],
+      "field": "email",
+      "raw_values": {
+        "WAVE-003": "t003@creators.example.com",
+        "NOX-003": "manager.t003@agency.example.com",
+        "MAN-003": "business.t003@creators.example.com"
+      },
+      "expected_level": "review_required",
+      "reason": "Personal and agency contact routes disagree."
+    },
+    {
+      "conflict_id": "country_t005",
+      "creator_key": "T005",
+      "records": [
+        "WAVE-005",
+        "NOX-005",
+        "MAN-005"
+      ],
+      "field": "country",
+      "raw_values": {
+        "WAVE-005": "United States",
+        "NOX-005": "CA",
+        "MAN-005": "USA"
+      },
+      "expected_level": "review_required",
+      "reason": "US and CA affect the hard market filter."
+    },
+    {
+      "conflict_id": "language_t008",
+      "creator_key": "T008",
+      "records": [
+        "WAVE-008",
+        "NOX-008",
+        "MAN-008"
+      ],
+      "field": "language",
+      "raw_values": {
+        "WAVE-008": "English",
+        "NOX-008": "ES",
+        "MAN-008": "en"
+      },
+      "expected_level": "review_required",
+      "reason": "EN and ES affect the hard language filter."
+    }
+  ],
+  "stale_fields": [
+    {
+      "creator_key": "T009",
+      "records": [
+        "WAVE-009",
+        "NOX-009",
+        "MAN-009"
+      ],
+      "field": "email",
+      "observed_at": "2025-12-01T08:00:00Z",
+      "expected_status": "stale",
+      "reason": "Email is older than the 90-day beta TTL."
+    },
+    {
+      "creator_key": "UW005",
+      "records": [
+        "WAVE-025"
+      ],
+      "field": "email",
+      "observed_at": "2025-10-15T08:00:00Z",
+      "expected_status": "stale",
+      "reason": "A contact path exists, but its observation is stale."
+    }
+  ],
+  "missing_fields": [
+    {
+      "creator_key": "T004",
+      "records": [
+        "WAVE-004",
+        "NOX-004",
+        "MAN-004"
+      ],
+      "field": "email",
+      "expected_status": "missing"
+    }
+  ],
+  "observed_time_unknown": [
+    {
+      "records": [
+        "NOX-010"
+      ],
+      "fields_affected": [
+        "profile",
+        "metrics",
+        "email"
+      ],
+      "expected_status": "observed_time_unknown",
+      "must_not_be_marked": "fresh"
+    },
+    {
+      "records": [
+        "WAVE-033",
+        "NOX-033",
+        "MAN-033"
+      ],
+      "fields_affected": [
+        "profile",
+        "metrics"
+      ],
+      "expected_status": "observed_time_unknown",
+      "must_not_be_marked": "fresh"
+    }
+  ],
+  "format_parsing_cases": [
+    {
+      "record": "WAVE-002",
+      "field": "followers",
+      "raw": "128K",
+      "expected_value": 128000
+    },
+    {
+      "record": "WAVE-013",
+      "field": "followers",
+      "raw": "1.2M",
+      "expected_value": 1200000
+    },
+    {
+      "record": "WAVE-001",
+      "field": "engagement_rate",
+      "raw": "3.5%",
+      "expected_value": 0.035
+    }
+  ],
+  "invalid_values": [
+    {
+      "record": "WAVE-030",
+      "field": "followers",
+      "raw": "many",
+      "expected_status": "invalid"
+    },
+    {
+      "record": "NOX-030",
+      "field": "average_views",
+      "raw": "N/A?",
+      "expected_status": "invalid"
+    },
+    {
+      "record": "MAN-030",
+      "field": "engagement_rate",
+      "raw": "three percent",
+      "expected_status": "invalid"
+    },
+    {
+      "record": "WAVE-031",
+      "field": "latest_post_at",
+      "raw": "2026-13-40",
+      "expected_status": "invalid"
+    },
+    {
+      "record": "NOX-031",
+      "field": "latest_sponsored_post_at",
+      "raw": "not-a-date",
+      "expected_status": "invalid"
+    },
+    {
+      "record": "MAN-031",
+      "field": "observed_at",
+      "raw": "yesterday-ish",
+      "expected_status": "invalid"
+    }
+  ],
+  "campaign_exclusions": [
+    {
+      "creator_key": "UW006",
+      "records": [
+        "WAVE-026"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_MARKET",
+        "EXCLUDED_LANGUAGE"
+      ]
+    },
+    {
+      "creator_key": "UN006",
+      "records": [
+        "NOX-026"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_MARKET",
+        "EXCLUDED_LANGUAGE"
+      ]
+    },
+    {
+      "creator_key": "UM006",
+      "records": [
+        "MAN-026"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_MARKET",
+        "EXCLUDED_LANGUAGE"
+      ]
+    },
+    {
+      "creator_key": "UW007",
+      "records": [
+        "WAVE-027"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_FOLLOWER_RANGE"
+      ]
+    },
+    {
+      "creator_key": "UN007",
+      "records": [
+        "NOX-027"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_FOLLOWER_RANGE"
+      ]
+    },
+    {
+      "creator_key": "WN003",
+      "records": [
+        "WAVE-013",
+        "NOX-013"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_FOLLOWER_RANGE"
+      ]
+    },
+    {
+      "creator_key": "UM007",
+      "records": [
+        "MAN-027"
+      ],
+      "expected_reasons": [
+        "EXCLUDED_INACTIVE"
+      ]
+    }
+  ]
+}

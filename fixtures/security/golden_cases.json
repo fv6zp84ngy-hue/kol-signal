@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "scope": "R1 fatal input and spreadsheet safety",
+  "dangerous_excel_prefixes": [
+    "=HYPERLINK(1)",
+    "+CMD",
+    "-1+1",
+    "@SUM(A1:A2)",
+    "\tCMD",
+    "\rCMD"
+  ],
+  "supported_inputs": [
+    "UTF-8 CSV",
+    "UTF-8-SIG CSV",
+    "unencrypted XLSX with one explicitly selected non-empty worksheet"
+  ],
+  "unsupported_inputs": [
+    "XLS",
+    "encrypted XLSX",
+    "non-UTF-8 CSV",
+    "automatic encoding guessing"
+  ]
+}
