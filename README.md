@@ -1,4 +1,4 @@
-# KOL List Auditor — 0.5.0a1 Open Alpha
+# KOL List Auditor 
 
 [![CI configured](.github/badges/ci.svg)](.github/workflows/test.yml)
 
