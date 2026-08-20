@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creator Signal Intelligence"
+  short_description: "Guide local creator-list audits, reviews, and feedback"
+  default_prompt: "Use $creator-signal-intelligence to audit my creator lists and guide me through review and feedback."
