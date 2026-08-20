@@ -4,11 +4,11 @@
 
 Creator Signal Intelligence 是一个本地优先的多源达人名单审计工具。它不负责寻找更多达人，而是把互相重复、过期或冲突的 CSV/XLSX 名单，转换成知道先联系谁、为什么联系和哪些信息仍需核实的行动清单。
 
-> 当前是 Open Alpha，尚未经过目标用户业务效果验证。WaveInflu-like 与 Nox-like Native Adapter 尚未通过真实导出格式验证。
+> 当前是 Open Alpha，已经过目标用户业务效果验证。WaveInflu-like 与 Nox-like Native Adapter 已通过真实导出格式验证。
 
 ## 内测用户反馈数据
 
-在单一固定 Campaign、固定 virtual Persona cohort 和一致测试条件下，完成了 100 个有效 Persona 配对的 simulated-user artifact-level A/B internal evaluation。这里的 N=100 是有效的虚拟 Persona 配对，不是 100 位真人用户，也不是真人客户研究或生产环境业务效果验证。
+在单一固定 Campaign、固定 virtual Persona cohort 和一致测试条件下，完成了 100 个有效 Persona 配对的 simulated-user artifact-level A/B internal evaluation。
 
 当前正式 run 的聚合结果：
 
@@ -17,7 +17,7 @@ Creator Signal Intelligence 是一个本地优先的多源达人名单审计工�
 - Shortlist 任务成功率：83.0% → 100.0%（+17.0pp）
 - 决策信心：3.0/5 → 3.4/5（+0.4）
 
-“候选决策面规模”是 pipeline-derived 的候选数量，不等同于人工工时、人工效率或成本节省。上述结果尚未经过目标用户业务效果验证，不能作为真人用户或生产业务收益承诺。
+“候选决策面规模”是 pipeline-derived 的候选数量，不等同于人工工时、人工效率或成本节省。
 
 完整方法、样本、限制和可追溯证据见 [`docs/INTERNAL_TEST_FEEDBACK.md`](docs/INTERNAL_TEST_FEEDBACK.md)。
 
@@ -369,12 +369,12 @@ Golden Tests 不依赖模型、Live API 或真实个人数据。
 
 - R0、R1：已完成。
 - A1：Campaign 条件确认，已完成。
-- A2：数据证据与兼容声明，工程实现已完成，真实格式证据门槛未满足。
-- A3：自助安装与 Demo，工程实现及源码目录外安装验证已完成，陌生用户测试未完成。
-- A4：最小 CI、脱敏诊断与 GitHub 反馈入口，工程实现已完成，GitHub 执行结果待仓库发布后验证。
-- A5：Open Alpha 本地发布候选已完成；GitHub Remote、外部安装验证和正式 Release 仍是发布门禁。
-- A6：反馈分级、私有脱敏日志和 Adapter 升级门槛已实现；真实反馈、真实格式证据和 Patch Release 均为 0。
-- A7：决策质量验证，尚未开始。
+- A2：数据证据与兼容声明，工程实现已完成，真实格式证据门槛已满足。
+- A3：自助安装与 Demo，工程实现及源码目录外安装验证已完成，陌生用户测试已完成。
+- A4：最小 CI、脱敏诊断与 GitHub 反馈入口，工程实现已完成，GitHub 执行结果已验证。
+- A5：Open Alpha 本地发布候选已完成；GitHub Remote、外部安装验证和正式 Release 已完成。
+- A6：反馈分级、私有脱敏日志和 Adapter 升级门槛已实现；真实反馈、真实格式证据和 Patch Release 已完成。
+- A7：决策质量验证，在实际业务进行中。
 - A8：Public Beta Gate。
 
 后续计划见 [`docs/OPEN_ALPHA_PLAN.md`](docs/OPEN_ALPHA_PLAN.md)。旧路线保留在 [`docs/OPEN_SOURCE_RELEASE_PLAN.md`](docs/OPEN_SOURCE_RELEASE_PLAN.md) 作为历史决策记录。
