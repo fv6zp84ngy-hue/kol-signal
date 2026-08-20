@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-08-20",
+  "audience": "public_github_repository",
+  "repository_package": "kol-signal",
+  "release": {
+    "product_version": "0.5.0a1",
+    "tag": "v0.5.0-alpha.1",
+    "channel": "Open Alpha",
+    "status": "source_release_candidate",
+    "business_validation": "not_yet_validated_for_target_user_outcomes"
+  },
+  "project": {
+    "name": "Creator Signal Intelligence",
+    "public_name": "KOL List Auditor",
+    "one_line_summary": "本地优先的多源达人名单审计、联系优先级决策和反馈回收工具。",
+    "business_context": "海外 KOL 营销实习生、初级 Influencer Marketing 运营和小型 Agency 已经拥有多份达人名单，但名单常有重复、过期、缺失和冲突，难以判断本次 Campaign 应该优先联系谁。",
+    "example_domain": "宠物智能硬件出海 Campaign",
+    "p0_chain": [
+      "上传多份名单",
+      "字段映射",
+      "标准化",
+      "确定性去重",
+      "数据审计",
+      "Campaign 筛选",
+      "Shortlist",
+      "Excel 导出",
+      "用户反馈回收"
+    ]
+  },
+  "source_precedence": [
+    {
+      "rank": 1,
+      "authority": "frozen_product_contract",
+      "paths": ["docs/PRD.md", "docs/DESIGN.md", "docs/SPEC.md"],
+      "use_for": "产品范围、P0 链路、架构约束和验收契约"
+    },
+    {
+      "rank": 2,
+      "authority": "current_implementation_status",
+      "paths": ["README.md", "docs/IMPLEMENTATION_STATUS.md", "docs/KNOWN_LIMITATIONS.md"],
+      "use_for": "当前能力、公开限制和发布状态"
+    },
+    {
+      "rank": 3,
+      "authority": "executable_evidence",
+      "paths": ["kol_signal/", "fixtures/", "examples/", "tests/", "tools/"],
+      "use_for": "实际运行行为、测试输入输出和可复现验证"
+    },
+    {
+      "rank": 4,
+      "authority": "release_documentation",
+      "paths": ["docs/releases/", "CHANGELOG.md"],
+      "use_for": "版本说明和发布边界"
+    }
+  ],
+  "public_source_groups": [
+    {
+      "id": "product_contract",
+      "label": "产品与技术契约",
+      "paths": [
+        "docs/PRD.md",
+        "docs/DESIGN.md",
+        "docs/SPEC.md",
+        "docs/CAMPAIGN_SUPPORT.md",
+        "docs/SUPPORTED_FORMATS.md"
+      ],
+      "purpose": "说明解决谁的问题、冻结的 P0 范围、架构原则、输入限制和验收口径。"
+    },
+    {
+      "id": "runtime",
+      "label": "可运行产品代码",
+      "paths": [
+        "pyproject.toml",
+        "kol_signal/",
+        "skills/creator-signal-intelligence/"
+      ],
+      "purpose": "提供 CLI、导入、Mapping、标准化、去重、审计、评分、导出、反馈、Demo、Doctor 和 Diagnostics。"
+    },
+    {
+      "id": "synthetic_verification",
+      "label": "合成验证资产",
+      "paths": [
+        "fixtures/",
+        "examples/open_alpha_case/",
+        "tests/"
+      ],
+      "purpose": "提供虚构或脱敏的 Fixture、Golden Tests、安全测试和可复现示例；不包含真实达人名单。"
+    },
+    {
+      "id": "public_operations",
+      "label": "公开运行与反馈入口",
+      "paths": [
+        ".github/",
+        "README.md",
+        "LICENSE",
+        "SECURITY.md",
+        "docs/INSTALLATION.md",
+        "docs/SKILL_INSTALLATION.md",
+        "docs/ADAPTER_COMPATIBILITY.md",
+        "docs/DATA_SOURCE_REGISTER.md",
+        "docs/OPEN_ALPHA_FEEDBACK.md",
+        "docs/errors/",
+        "docs/releases/"
+      ],
+      "purpose": "让其他用户理解、安装、运行、诊断和提交脱敏反馈。"
+    }
+  ],
+  "public_data_policy": {
+    "allowed": [
+      "synthetic fixtures",
+      "redacted approved examples",
+      "example.com and example.net contact values",
+      "public product metadata references"
+    ],
+    "forbidden": [
+      "real creator lists",
+      "real Email or phone numbers",
+      "private Campaign content",
+      "API keys, access tokens, cookies or private keys",
+      "raw benchmark Run directories",
+      "provider raw responses"
+    ]
+  },
+  "excluded_from_public_source_package": [
+    ".git/",
+    ".venv/",
+    ".venv-*/",
+    "runs/",
+    ".kol-signal/",
+    "dist/",
+    "build/",
+    "*.egg-info/",
+    "benchmarks/",
+    "tools/internal_feedback_benchmark.py",
+    "tools/run_deepseek_personas.py",
+    "tests/test_internal_feedback_benchmark.py",
+    "tests/test_deepseek_persona_executor.py",
+    "docs/PROJECT_SUMMARY.json",
+    "docs/alpha/",
+    "sources.json"
+  ],
+  "known_limitations": [
+    "Open Alpha 尚未经过目标用户业务效果验证。",
+    "WaveInflu-like 和 Nox-like Native Adapter 尚未通过真实第三方导出格式验证。",
+    "只支持 UTF-8/UTF-8-SIG CSV 和未加密 XLSX。",
+    "不调用 Live API、不抓取社交平台、不自动发送邮件。",
+    "不承诺提高回复率、合作转化率或人工工时效率。"
+  ],
+  "reproducibility": {
+    "source_tag": "v0.5.0-alpha.1",
+    "package_version": "0.5.0a1",
+    "runtime_dependency": "openpyxl>=3.1,<4",
+    "benchmark_and_provider_integrations": "excluded_from_public_user_package"
+  }
+}
